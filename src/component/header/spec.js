@@ -4,14 +4,11 @@ import { shallow } from "enzyme";
 
 import Header from "./index";
 
+import { findByTestAtt } from "../../Utils/index";
+
 const setUp = (props = {}) => {
   const component = shallow(<Header {...props} />);
   return component;
-};
-
-const findByTestAtt = (component, attribute) => {
-  const wrapper = component.find(`[data-test='${attribute}']`);
-  return wrapper;
 };
 
 describe("Header Component", () => {
