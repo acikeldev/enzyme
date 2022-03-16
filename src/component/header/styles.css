@@ -1,0 +1,24 @@
+header {
+  background-color: #121212;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.wrap {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 980px;
+}
+.logo {
+  display: block;
+  width: 60px;
+}
+.logo > img {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
