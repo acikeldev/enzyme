@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Headline from "./index";
 
-import { findByTestAttr } from "../../Utils";
+import { findByTestAtt } from "../../Utils/index";
 
 const setUp = (props = {}) => {
   const component = shallow(<Headline {...props} />);
@@ -10,26 +10,29 @@ const setUp = (props = {}) => {
 };
 
 describe("Headline Component", () => {
-  describe("Have props", () => {
+  describe("Have Props", () => {
     let wrapper;
-
     beforeEach(() => {
       const props = {
         header: "Test Header",
-        desc: "Test Desc",
+        desc: "Test Description",
       };
       wrapper = setUp(props);
     });
 
-    it("Should render wout errors", () => {
-      const component = findByTestAttr(wrapper, "headlineComponent");
+    it("Should render without errors", () => {
+      const component = findByTestAtt(wrapper, "headlineComponent");
       expect(component.length).toBe(1);
     });
-  });
-  describe("Have No props", () => {
-    let wrapper;
-    beforeEach(() => {
-      wrapper = setUp();
+
+    it("Should render H1", () => {
+      const h1 = findByTestAtt(wrapper, "header");
+      expect(h1.length).toBe(1);
+    });
+
+    it("Should render desc", () => {
+      const desc = findByTestAtt(wrapper, "desc");
+      expect(desc.length).toBe(1);
     });
   });
 });
